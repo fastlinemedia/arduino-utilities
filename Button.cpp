@@ -3,12 +3,11 @@
 
 Button::Button(int pin) {
     _pin = pin;
-    _state = 0;
-    _prevState = 0;
-    _delay = 100;
-    _lastChecked = 0;
-    _changed = false;
-    pinMode(pin, INPUT);
+    begin();
+}
+
+void Button::begin() {
+    pinMode(_pin, INPUT);
 }
 
 int Button::read() {

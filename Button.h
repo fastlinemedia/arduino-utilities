@@ -4,6 +4,7 @@
 class Button {
     public:
         Button(int pin);
+        void begin();
         int read();
         bool wasPressed();
         bool isPressed();
@@ -11,11 +12,11 @@ class Button {
         bool isReleased();
     private:
         int _pin;
-        int _state;
-        int _prevState;
-        unsigned long _delay;
-        unsigned long _lastChecked;
-        bool _changed;
+        int _state = 0;
+        int _prevState = 0;
+        unsigned long _delay = 100;
+        unsigned long _lastChecked = 0;
+        bool _changed = false;
 };
 
 #endif

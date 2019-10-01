@@ -5,12 +5,13 @@ RgbLed::RgbLed(int redPin, int greenPin, int bluePin) {
     _redPin = redPin;
     _greenPin = greenPin;
     _bluePin = bluePin;
-    _spectrumColor = 0;
-    _spectrumReversed = false;
-    _spectrumMillis = 0;
-    pinMode(redPin, OUTPUT);
-    pinMode(greenPin, OUTPUT);
-    pinMode(bluePin, OUTPUT);
+    begin();
+}
+
+void RgbLed::begin() {
+    pinMode(_redPin, OUTPUT);
+    pinMode(_greenPin, OUTPUT);
+    pinMode(_bluePin, OUTPUT);
 }
 
 void RgbLed::on() {
