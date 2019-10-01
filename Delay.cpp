@@ -10,7 +10,3 @@ void Delay::check(void(*callback)()) {
         callback();
     }
 }
-
-void Delay::reset() {
-    _lastChecked = 0;
-}
