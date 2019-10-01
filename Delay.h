@@ -5,6 +5,7 @@ class Delay {
     public:
         Delay(unsigned long length);
         void check(void(*callback)());
+        void reset();
     private:
         unsigned long _length = 0;
         unsigned long _lastChecked = 0;
