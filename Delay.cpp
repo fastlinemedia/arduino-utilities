@@ -5,7 +5,7 @@ Delay::Delay(unsigned long length): _length(length) {}
 
 void Delay::check(void(*callback)()) {
     unsigned long now = millis();
-    if ( now - _lastChecked > _length ) {
+    if (now - _lastChecked > _length) {
         _lastChecked = now;
         callback();
     }
