@@ -15,6 +15,7 @@ class Button {
         int _prevState;
         unsigned long _delay;
         unsigned long _lastChecked;
+        bool _changed;
 };
 
 #endif

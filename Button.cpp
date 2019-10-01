@@ -7,6 +7,7 @@ Button::Button(int pin) {
     _prevState = 0;
     _delay = 100;
     _lastChecked = 0;
+    _changed = false;
     pinMode(pin, INPUT);
 }
 
@@ -16,12 +17,17 @@ int Button::read() {
         _lastChecked = currentMillis;
         _prevState = _state;
         _state = digitalRead(_pin);
+        _changed = _prevState != _state;
     }
     return _state;
 }
 
 bool Button::wasPressed() {
-    return read() > _prevState;
+    if (_changed && isPressed()) {
+        _changed = false;
+        return true;
+    }
+    return false;
 }
 
 bool Button::isPressed() {
@@ -29,7 +35,11 @@ bool Button::isPressed() {
 }
 
 bool Button::wasReleased() {
-    return read() < _prevState;
+    if (_changed && isReleased()) {
+        _changed = false;
+        return true;
+    }
+    return false;
 }
 
 bool Button::isReleased() {
