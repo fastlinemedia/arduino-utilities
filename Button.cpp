@@ -22,11 +22,7 @@ int Button::read() {
 }
 
 bool Button::wasPressed() {
-    if (_changed && isPressed()) {
-        _changed = false;
-        return true;
-    }
-    return false;
+    return _didChange() && isPressed();
 }
 
 bool Button::isPressed() {
@@ -34,13 +30,18 @@ bool Button::isPressed() {
 }
 
 bool Button::wasReleased() {
-    if (_changed && isReleased()) {
-        _changed = false;
-        return true;
-    }
-    return false;
+    return _didChange() && isReleased();
 }
 
 bool Button::isReleased() {
     return read() == LOW;
+}
+
+bool Button::_didChange() {
+    read();
+    if (_changed) {
+        _changed = false;
+        return true;
+    }
+    return false;
 }
