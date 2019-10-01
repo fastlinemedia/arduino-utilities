@@ -7,7 +7,7 @@ Current libraries include...
 * Bluetooth (coming soon)
 * Button
 * Led
-* RgbLed (coming soon)
+* RgbLed
 * QueryArgs (coming soon)
 * Sonar (coming soon)
 * Wifi (coming soon)
