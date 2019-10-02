@@ -1,7 +1,10 @@
 #include "Timer.h"
 #include <Arduino.h>
 
-Timer::Timer() {}
+unsigned long Timer::_starts[TIMER_ARRAY_SIZE] = {};
+unsigned long Timer::_lengths[TIMER_ARRAY_SIZE] = {};
+void (*Timer::_callbacks[TIMER_ARRAY_SIZE])() = {};
+bool Timer::_intervals[TIMER_ARRAY_SIZE] = {};
 
 int Timer::delay(unsigned long length, void(*callback)()) {
     for (int i = 0; i < TIMER_ARRAY_SIZE; i++) {

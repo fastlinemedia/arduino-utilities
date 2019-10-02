@@ -7,16 +7,15 @@
 
 class Timer {
     public:
-        Timer();
-        int delay(unsigned long length, void(*callback)());
-        int interval(unsigned long length, void(*callback)());
-        void off(int id);
-        void loop();
+        static int delay(unsigned long length, void(*callback)());
+        static int interval(unsigned long length, void(*callback)());
+        static void off(int id);
+        static void loop();
     private:
-        unsigned long _starts[TIMER_ARRAY_SIZE];
-        unsigned long _lengths[TIMER_ARRAY_SIZE];
-        void (*_callbacks[TIMER_ARRAY_SIZE])();
-        bool _intervals[TIMER_ARRAY_SIZE];
+        static unsigned long _starts[TIMER_ARRAY_SIZE];
+        static unsigned long _lengths[TIMER_ARRAY_SIZE];
+        static void (*_callbacks[TIMER_ARRAY_SIZE])();
+        static bool _intervals[TIMER_ARRAY_SIZE];
 };
 
 #endif
