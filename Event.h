@@ -2,7 +2,7 @@
 #define Event_h
 
 #ifndef EVENT_ARRAY_SIZE
-#define EVENT_ARRAY_SIZE 100
+#define EVENT_ARRAY_SIZE 50
 #endif
 
 class Event {
