@@ -4,11 +4,9 @@ If there's something you like, please use it! If you have any suggestions, I'd l
 
 Current libraries include...
 
-* Bluetooth (coming soon)
 * Button
 * Delay
+* Event
 * Led
-* QueryArgs (coming soon)
 * RgbLed
-* Sonar (coming soon)
-* Wifi (coming soon)
+* Timer
