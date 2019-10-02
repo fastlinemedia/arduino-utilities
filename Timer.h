@@ -1,6 +1,9 @@
 #ifndef Timer_h
 #define Timer_h
-#define TIMER_ARRAY_SIZE 10
+
+#ifndef TIMER_ARRAY_SIZE
+#define TIMER_ARRAY_SIZE 100
+#endif
 
 class Timer {
     public:

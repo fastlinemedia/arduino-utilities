@@ -1,14 +1,22 @@
 #ifndef Event_h
 #define Event_h
+
+#ifndef EVENT_ARRAY_SIZE
 #define EVENT_ARRAY_SIZE 100
+#endif
 
 class Event {
     public:
-        Event();
-        void on(int event, void(*callback)());
-        void once(int event, void(*callback)());
-        void off(int event);
-        void trigger(int event);
+        static int on(int event, void(*callback)(), bool once);
+        static int on(int event, void(*callback)());
+        static int once(int event, void(*callback)());
+        static void off(int event, int id);
+        static void off(int event);
+        static void trigger(int event);
+    private:
+        static int _events[EVENT_ARRAY_SIZE];
+        static void (*_callbacks[EVENT_ARRAY_SIZE])();
+        static bool _once[EVENT_ARRAY_SIZE];
 };
 
 #endif
