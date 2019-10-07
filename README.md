@@ -5,7 +5,6 @@ If there's something you like, please use it! If you have any suggestions, I'd l
 Current libraries include...
 
 * Button
-* Delay
 * Event
 * Led
 * RgbLed
