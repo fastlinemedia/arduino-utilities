@@ -1,6 +1,8 @@
 #ifndef Event_h
 #define Event_h
 
+#include <Arduino.h>
+
 #ifndef EVENT_ARRAY_SIZE
 #define EVENT_ARRAY_SIZE 50
 #endif

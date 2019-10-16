@@ -1,6 +1,8 @@
 #ifndef Timer_h
 #define Timer_h
 
+#include <Arduino.h>
+
 #ifndef TIMER_ARRAY_SIZE
 #define TIMER_ARRAY_SIZE 50
 #endif

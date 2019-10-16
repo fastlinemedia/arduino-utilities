@@ -1,5 +1,4 @@
 #include "Timer.h"
-#include <Arduino.h>
 
 unsigned long Timer::_starts[TIMER_ARRAY_SIZE] = {};
 unsigned long Timer::_lengths[TIMER_ARRAY_SIZE] = {};

@@ -1,6 +1,8 @@
 #ifndef RgbLed_h
 #define RgbLed_h
 
+#include <Arduino.h>
+
 class RgbLed {
     public:
         RgbLed(int redPin, int greenPin, int bluePin);

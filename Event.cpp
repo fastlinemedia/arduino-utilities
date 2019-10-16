@@ -1,5 +1,4 @@
 #include "Event.h"
-#include <Arduino.h>
 
 int Event::_events[EVENT_ARRAY_SIZE] = {};
 void (*Event::_callbacks[EVENT_ARRAY_SIZE])() = {};

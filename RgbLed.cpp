@@ -1,5 +1,4 @@
 #include "RgbLed.h"
-#include <Arduino.h>
 
 RgbLed::RgbLed(int redPin, int greenPin, int bluePin) {
     _redPin = redPin;
