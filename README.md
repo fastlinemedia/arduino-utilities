@@ -10,5 +10,6 @@ Current libraries include...
 * Led
 * QueryString
 * RgbLed
+* Sonar
 * Timer
 * WiFiConnection
