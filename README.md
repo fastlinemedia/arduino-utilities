@@ -11,3 +11,4 @@ Current libraries include...
 * QueryString
 * RgbLed
 * Timer
+* WiFiConnection
