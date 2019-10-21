@@ -19,6 +19,7 @@ int Timer::delay(unsigned long length, void(*callback)()) {
 int Timer::interval(unsigned long length, void(*callback)()) {
     int id = delay(length, callback);
     _intervals[id] = true;
+    return id;
 }
 
 void Timer::off(int id) {
