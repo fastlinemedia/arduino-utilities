@@ -31,7 +31,7 @@ int Button::read() {
 }
 
 bool Button::wasPressed() {
-    return _didChange() && isPressed();
+    return isPressed() && _didChange();
 }
 
 bool Button::isPressed() {
@@ -42,7 +42,7 @@ bool Button::isPressed() {
 }
 
 bool Button::wasReleased() {
-    return _didChange() && isReleased();
+    return isReleased() && _didChange();
 }
 
 bool Button::isReleased() {
