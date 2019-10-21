@@ -5,7 +5,7 @@
 
 class Button {
     public:
-        Button(int pin);
+        Button(int pin, bool invert = false, bool pullup = false);
         void begin();
         int read();
         bool wasPressed();
@@ -14,6 +14,8 @@ class Button {
         bool isReleased();
     private:
         int _pin;
+        int _invert = false;
+        int _pullup = false;
         int _state = 0;
         int _prevState = 0;
         unsigned long _delay = 100;

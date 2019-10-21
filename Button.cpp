@@ -1,12 +1,22 @@
 #include "Button.h"
 
-Button::Button(int pin) {
+Button::Button(int pin, bool invert, bool pullup) {
     _pin = pin;
+    _invert = invert;
+    _pullup = pullup;
+    if (_invert) {
+        _state = HIGH;
+        _prevState = HIGH;
+    }
     begin();
 }
 
 void Button::begin() {
-    pinMode(_pin, INPUT);
+    if (_pullup) {
+        pinMode(_pin, INPUT_PULLUP);
+    } else {
+        pinMode(_pin, INPUT);
+    }
 }
 
 int Button::read() {
@@ -25,6 +35,9 @@ bool Button::wasPressed() {
 }
 
 bool Button::isPressed() {
+    if (_invert) {
+        return read() == LOW;
+    }
     return read() == HIGH;
 }
 
@@ -33,6 +46,9 @@ bool Button::wasReleased() {
 }
 
 bool Button::isReleased() {
+    if (_invert) {
+        return read() == HIGH;
+    }
     return read() == LOW;
 }
 
