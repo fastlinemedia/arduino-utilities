@@ -1,3 +1,4 @@
+#ifdef PINS_COUNT
 #ifndef WiFiConnection_h
 #define WiFiConnection_h
 
@@ -16,4 +17,5 @@ class WiFiConnection {
         WiFiServer _server;
 };
 
+#endif
 #endif

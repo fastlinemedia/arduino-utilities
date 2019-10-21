@@ -1,3 +1,4 @@
+#ifdef PINS_COUNT
 #include "WiFiConnection.h"
 
 WiFiConnection::WiFiConnection()
@@ -68,3 +69,5 @@ void WiFiConnection::listen(void (*handleRequest)(String)) {
         client.stop();
     }
 }
+
+#endif
