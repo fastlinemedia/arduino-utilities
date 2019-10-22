@@ -31,7 +31,17 @@ int Button::read() {
 }
 
 bool Button::wasPressed() {
-    return isPressed() && _didChange();
+    read();
+    if (_changed) {
+        if (_invert && _prevState > _state) {
+            _changed = false;
+            return true;
+        } else if (!_invert && _prevState < _state) {
+            _changed = false;
+            return true;
+        }
+    }
+    return false;
 }
 
 bool Button::isPressed() {
@@ -42,7 +52,17 @@ bool Button::isPressed() {
 }
 
 bool Button::wasReleased() {
-    return isReleased() && _didChange();
+    read();
+    if (_changed) {
+        if (_invert && _prevState < _state) {
+            _changed = false;
+            return true;
+        } else if (!_invert && _prevState > _state) {
+            _changed = false;
+            return true;
+        }
+    }
+    return false;
 }
 
 bool Button::isReleased() {
@@ -50,13 +70,4 @@ bool Button::isReleased() {
         return read() == HIGH;
     }
     return read() == LOW;
-}
-
-bool Button::_didChange() {
-    read();
-    if (_changed) {
-        _changed = false;
-        return true;
-    }
-    return false;
 }

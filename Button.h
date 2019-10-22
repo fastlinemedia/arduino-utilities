@@ -21,7 +21,6 @@ class Button {
         unsigned long _delay = 100;
         unsigned long _lastChecked = 0;
         bool _changed = false;
-        bool _didChange();
 };
 
 #endif
